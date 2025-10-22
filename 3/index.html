@@ -5,26 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>洋菓子専門店「ケーク」大阪 阿倍野 帝塚山</title>
     <style>
-        /* ページ全体の基本的なスタイル */
         body {
             font-family: sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background-color: #ffc0cb; 
         }
 
-        /* 全体を囲むコンテナ (div) */
         .container {
-            max-width: 840px; /* 2x2に合わせ、少し幅を広くする */
+            max-width: 840px;
             margin: 20px auto;
             padding: 20px;
             background-color: #ffffff;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-
-        /* ヘッダーセクション (div) */
+        
         .header {
             text-align: center;
             border-bottom: 2px solid #f0e68c;
@@ -33,7 +30,7 @@
         }
         .header h1 {
             margin: 0;
-            color: #5d4037;
+            color: #800000; 
         }
         .header h2 {
             margin: 5px 0 0 0;
@@ -41,49 +38,43 @@
             color: #795548;
         }
 
-        /* ロゴ (header内のimg) */
         .header .logo {
-            max-width: 180px; /* ロゴの最大幅を調整 */
+            max-width: 180px;
             height: auto;
-            margin-bottom: 10px; /* ロゴの下に余白 */
+            margin-bottom: 10px;
         }
 
-        /* 導入文セクション (div) */
         .introduction {
             text-align: center;
             margin-bottom: 30px;
         }
-        
-        /* ケーキリスト全体を囲む (div) - 2x2整列用 */
+
         .cake-list {
-            display: grid; /* グリッドレイアウトを使用 */
-            grid-template-columns: repeat(2, 1fr); /* 2列に分割し、それぞれが均等な幅になるように */
-            gap: 30px; /* グリッドアイテム間の隙間 */
-            padding: 0 20px; /* 左右の余白 */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            padding: 0 20px;
         }
 
-        /* 各ケーキの紹介アイテム (div) */
         .cake-item {
-            text-align: center; /* テキストと画像を中央揃え */
+            text-align: center;
             padding: 15px;
             border: 1px solid #eee;
             border-radius: 8px;
-            background-color: #fffaf0; /* 少し背景色を付けて区別しやすく */
+            background-color: #fffaf0;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
-        
-        /* ケーキの写真 (div内のimg) */
+
         .cake-item img {
-            width: 200px; /* 画像の幅を固定 */
-            height: 200px; /* 画像の高さを固定 */
+            width: 200px;
+            height: 200px;
             object-fit: cover;
             border-radius: 8px;
-            margin-bottom: 10px; /* 画像の下に余白 */
+            margin-bottom: 10px;
         }
 
-        /* ケーキの説明文 (div内のdiv) */
         .cake-item .description {
-            /* ここでは特別な整列は不要 */
+
         }
         .cake-item h3 {
             margin-top: 0;
@@ -94,10 +85,10 @@
             color: #555;
         }
 
-        /* フッター (div) */
+
         .footer {
             text-align: center;
-            margin-top: 40px; /* グリッドからの余白を増やす */
+            margin-top: 40px;
             padding-top: 20px;
             border-top: 1px solid #eee;
             font-size: 0.9em;
