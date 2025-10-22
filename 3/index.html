@@ -16,8 +16,8 @@
 
         /* 全体を囲むコンテナ (div) */
         .container {
-            max-width: 800px;
-            margin: 20px auto; /* 上下に20px、左右は自動で中央揃え */
+            max-width: 840px; /* 2x2に合わせ、少し幅を広くする */
+            margin: 20px auto;
             padding: 20px;
             background-color: #ffffff;
             border-radius: 8px;
@@ -41,55 +41,63 @@
             color: #795548;
         }
 
+        /* ロゴ (header内のimg) */
+        .header .logo {
+            max-width: 180px; /* ロゴの最大幅を調整 */
+            height: auto;
+            margin-bottom: 10px; /* ロゴの下に余白 */
+        }
+
         /* 導入文セクション (div) */
         .introduction {
             text-align: center;
             margin-bottom: 30px;
         }
         
-        /* ケーキリスト全体を囲む (div) */
+        /* ケーキリスト全体を囲む (div) - 2x2整列用 */
         .cake-list {
-            /* ここでは特別な整列は不要 */
+            display: grid; /* グリッドレイアウトを使用 */
+            grid-template-columns: repeat(2, 1fr); /* 2列に分割し、それぞれが均等な幅になるように */
+            gap: 30px; /* グリッドアイテム間の隙間 */
+            padding: 0 20px; /* 左右の余白 */
         }
 
         /* 各ケーキの紹介アイテム (div) */
         .cake-item {
-            display: flex; /* flexboxを使い、写真とテキストを横並びに整列 */
-            align-items: center; /* 上下中央揃え */
-            margin-bottom: 25px;
-            padding-bottom: 25px;
-            border-bottom: 1px dashed #ddd;
+            text-align: center; /* テキストと画像を中央揃え */
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            background-color: #fffaf0; /* 少し背景色を付けて区別しやすく */
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
         
-        /* 最後のアイテムの下線は消す */
-        .cake-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-        }
-
         /* ケーキの写真 (div内のimg) */
         .cake-item img {
-            width: 200px;
-            height: 200px;
-            object-fit: cover; /* 画像の比率を保ったまま領域を埋める */
+            width: 200px; /* 画像の幅を固定 */
+            height: 200px; /* 画像の高さを固定 */
+            object-fit: cover;
             border-radius: 8px;
-            margin-right: 20px; /* 写真の右側に余白 */
-            flex-shrink: 0; /* コンテナが縮んでも画像サイズを維持 */
+            margin-bottom: 10px; /* 画像の下に余白 */
         }
 
         /* ケーキの説明文 (div内のdiv) */
         .cake-item .description {
-            flex-grow: 1; /* 残りのスペースを全て使う */
+            /* ここでは特別な整列は不要 */
         }
         .cake-item h3 {
             margin-top: 0;
             color: #d2691e;
         }
+        .cake-item p {
+            font-size: 0.9em;
+            color: #555;
+        }
 
         /* フッター (div) */
         .footer {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 40px; /* グリッドからの余白を増やす */
             padding-top: 20px;
             border-top: 1px solid #eee;
             font-size: 0.9em;
@@ -102,6 +110,7 @@
     <div class="container">
 
         <div class="header">
+            <img src="logo.png" alt="ケーキハウス ケークのロゴ" class="logo">
             <h1>洋菓子専門店「ケーク」大阪 阿倍野 帝塚山</h1>
             <h2>ケーキハウス「ケーク」へようこそ</h2>
         </div>
