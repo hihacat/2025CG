@@ -1,1 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>洋菓子専門店「ケーク」大阪 阿倍野 帝塚山</title>
+    <style>
+        /* ページ全体の基本的なスタイル */
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
 
+        /* 全体を囲むコンテナ (div) */
+        .container {
+            max-width: 800px;
+            margin: 20px auto; /* 上下に20px、左右は自動で中央揃え */
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* ヘッダーセクション (div) */
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #f0e68c;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            color: #5d4037;
+        }
+        .header h2 {
+            margin: 5px 0 0 0;
+            font-weight: normal;
+            color: #795548;
+        }
+
+        /* 導入文セクション (div) */
+        .introduction {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        /* ケーキリスト全体を囲む (div) */
+        .cake-list {
+            /* ここでは特別な整列は不要 */
+        }
+
+        /* 各ケーキの紹介アイテム (div) */
+        .cake-item {
+            display: flex; /* flexboxを使い、写真とテキストを横並びに整列 */
+            align-items: center; /* 上下中央揃え */
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        /* 最後のアイテムの下線は消す */
+        .cake-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        /* ケーキの写真 (div内のimg) */
+        .cake-item img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover; /* 画像の比率を保ったまま領域を埋める */
+            border-radius: 8px;
+            margin-right: 20px; /* 写真の右側に余白 */
+            flex-shrink: 0; /* コンテナが縮んでも画像サイズを維持 */
+        }
+
+        /* ケーキの説明文 (div内のdiv) */
+        .cake-item .description {
+            flex-grow: 1; /* 残りのスペースを全て使う */
+        }
+        .cake-item h3 {
+            margin-top: 0;
+            color: #d2691e;
+        }
+
+        /* フッター (div) */
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h1>洋菓子専門店「ケーク」大阪 阿倍野 帝塚山</h1>
+            <h2>ケーキハウス「ケーク」へようこそ</h2>
+        </div>
+
+        <div class="introduction">
+            <p>このサイトでは、人気のケーキを紹介します。</p>
+            <p>
+                いらっしゃいませ<br>
+                甘いものを食べると、脳のなかで｢幸せホルモン｣といわれる
+                セロトニンが増えていると考えられています。
+            </p>
+        </div>
+
+        <div class="cake-list">
+
+            <div class="cake-item">
+                <img src="https://via.placeholder.com/200" alt="ショートケーキの写真">
+                <div class="description">
+                    <h3>ショートケーキ</h3>
+                    <p>イチゴがのった一番人気のスポンジケーキです。大人から子供まで、年中愛されるケーキです。</p>
+                </div>
+            </div>
+
+            <div class="cake-item">
+                <img src="https://via.placeholder.com/200" alt="モンブランの写真">
+                <div class="description">
+                    <h3>モンブラン</h3>
+                    <p>栗をふんだんに使ったケーキです。様々な形状があります。</p>
+                </div>
+            </div>
+
+            <div class="cake-item">
+                <img src="https://via.placeholder.com/200" alt="ザッハトルテの写真">
+                <div class="description">
+                    <h3>ザッハトルテ</h3>
+                    <p>こってりとしたチョコレートの濃厚な味わい</p>
+                </div>
+            </div>
+
+            <div class="cake-item">
+                <img src="https://via.placeholder.com/200" alt="シュークリームの写真">
+                <div class="description">
+                    <h3>シュークリーム</h3>
+                    <p>サクサク生地と濃厚クリームは相性抜群</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p>Copyright ケーキハウス Co.,Ltd. All Rights Reserved.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
