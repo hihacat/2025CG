@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>こだわり・店舗情報 | Trattoria 2025</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Trattoria 2025</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="menu.html">メニュー</a></li>
+                <li><a href="about.html" class="current">こだわり・店舗情報</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-visual" style="height: 40vh; background-image: url('images/内装1.jpg');">
+        <div class="main-visual-text">
+            <h1>About Us</h1>
+            <p>私たちのこだわりと店舗について</p>
+        </div>
+    </div>
+
+    <main class="container">
+        
+        <section>
+            <h2 class="section-title">Our Concept</h2>
+            
+            <div class="feature">
+                <div class="feature-img">
+                    <img src="images/こだわり1.jpg" alt="素材へのこだわり">
+                </div>
+                <div class="feature-text">
+                    <h3>素材へのこだわり</h3>
+                    <p>毎朝市場で仕入れる新鮮な魚介類や、契約農家から届く有機野菜を使用しています。素材本来の味を最大限に引き出す調理法で、お客様に感動をお届けします。</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-img">
+                    <img src="images/こだわり5チーズ料理.jpg" alt="チーズへのこだわり">
+                </div>
+                <div class="feature-text">
+                    <h3>本場の味を再現</h3>
+                    <p>イタリアから直輸入したチーズや調味料を使用し、現地の味を忠実に再現しています。特にパルミジャーノ・レッジャーノを使った料理は絶品です。</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-img">
+                    <img src="images/内装2.jpg" alt="空間へのこだわり">
+                </div>
+                <div class="feature-text">
+                    <h3>くつろぎの空間</h3>
+                    <p>温かみのある照明とインテリアで、落ち着いた雰囲気を演出しています。デートや記念日、ご家族での会食など、様々なシーンでご利用いただけます。</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top: 60px; background-color: #f9f9f9; padding: 40px; border-radius: 10px;">
+            <h2 class="section-title">Access & Info</h2>
+            <div style="text-align: center;">
+                <p><strong>Trattoria 2025 (トラットリア ニーマルニーゴー)</strong></p>
+                <p>〒275-0016 千葉県習志野市津田沼2-17-1</p>
+                <p>TEL: 03-1234-5678</p>
+                <p>営業時間: ランチ 11:30-14:30 / ディナー 17:30-22:00</p>
+                <p>定休日: 月曜日</p>
+                <br>
+                <p>※JR津田沼駅より徒歩5分。千葉工業大学のすぐそばです。</p>
+            </div>
+            <!-- Google Mapsなどの埋め込みをここに入れるのが一般的 -->
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Trattoria 2025. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
