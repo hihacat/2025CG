@@ -10,7 +10,6 @@ body {
     background-color: #fdfdfd;
 }
 
-/* リンクの装飾を消す */
 a {
     text-decoration: none;
     color: inherit;
@@ -21,17 +20,16 @@ a:hover {
     opacity: 0.7;
 }
 
-/* 画像のレスポンシブ対応 */
 img {
     max-width: 100%;
     height: auto;
     vertical-align: bottom;
 }
 
-/* ヘッダー（ロゴとナビゲーション） */
+/* ヘッダー */
 header {
-    background-color: #fff;
-    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95); /* 少し透過 */
+    padding: 15px 30px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
@@ -46,7 +44,7 @@ header {
     font-family: 'Georgia', serif;
     font-size: 24px;
     font-weight: bold;
-    color: #8b0000; /* イタリアンレッド */
+    color: #8b0000;
     border: 2px solid #8b0000;
     padding: 5px 15px;
     letter-spacing: 2px;
@@ -67,6 +65,7 @@ nav ul li a {
     font-weight: bold;
     color: #555;
     padding-bottom: 5px;
+    font-size: 14px;
 }
 
 nav ul li a:hover,
@@ -75,11 +74,10 @@ nav ul li a.current {
     border-bottom: 2px solid #8b0000;
 }
 
-/* メインビジュアル */
+/* メインビジュアル（静止画用・下層ページ用） */
 .main-visual {
     width: 100%;
-    height: 60vh;
-    background-image: url('../images/外観.jpg'); /* 素材の外観写真を使用 */
+    height: 40vh;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -95,7 +93,40 @@ nav ul li a.current {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.4); /* 画像を少し暗くする */
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* 動画メインビジュアル（トップページ用） */
+.main-visual-video {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* 動画は見栄え良く高さを取る */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-visual-video video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.main-visual-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3); /* 動画の上に薄い黒を被せて文字を見やすく */
+    z-index: 0;
 }
 
 .main-visual-text {
@@ -104,34 +135,49 @@ nav ul li a.current {
     color: #fff;
     text-align: center;
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    padding: 0 20px;
 }
 
 .main-visual-text h1 {
-    font-size: 48px;
+    font-size: 56px;
     margin-bottom: 10px;
     font-family: 'Georgia', serif;
+    letter-spacing: 3px;
 }
 
 .main-visual-text p {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 /* コンテンツエリア共通 */
 .container {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 60px 20px;
 }
 
 .section-title {
     text-align: center;
-    font-size: 28px;
+    font-size: 32px;
     color: #8b0000;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     font-family: 'Georgia', serif;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-/* グリッドレイアウト（メニューや写真用） */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: #8b0000;
+    margin: 10px auto 0;
+}
+
+/* グリッドレイアウト */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -142,7 +188,18 @@ nav ul li a.current {
     background: #fff;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
 .card-content {
@@ -165,6 +222,10 @@ nav ul li a.current {
     display: flex;
     align-items: center;
     margin-bottom: 60px;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .feature:nth-child(even) {
@@ -173,51 +234,94 @@ nav ul li a.current {
 
 .feature-img {
     flex: 1;
+    height: 350px; /* 高さを統一 */
 }
 
 .feature-img img {
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .feature-text {
     flex: 1;
-    padding: 0 40px;
+    padding: 40px;
 }
 
 .feature-text h3 {
     color: #8b0000;
-    font-size: 22px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #ddd;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* ボタン */
+.btn {
     display: inline-block;
+    padding: 12px 30px;
+    background-color: #8b0000;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #600000;
+    opacity: 1;
+}
+
+/* ギャラリーグリッド */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4列 */
+    gap: 10px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: opacity 0.3s;
+}
+
+.gallery-grid img:hover {
+    opacity: 0.8;
 }
 
 /* フッター */
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #222;
+    color: #ccc;
     text-align: center;
-    padding: 20px;
+    padding: 30px 20px;
     margin-top: 50px;
 }
 
 footer p {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 /* レスポンシブ調整 */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
+        padding: 15px;
     }
     
     nav ul {
         margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    .main-visual h1 {
-        font-size: 32px;
+    nav ul li {
+        margin: 5px 10px;
+    }
+
+    .main-visual-text h1 {
+        font-size: 36px;
     }
 
     .feature {
@@ -228,7 +332,16 @@ footer p {
         flex-direction: column;
     }
 
+    .feature-img {
+        width: 100%;
+        height: 250px;
+    }
+
     .feature-text {
-        padding: 20px 0;
+        padding: 30px 20px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* モバイルは2列 */
     }
 }
