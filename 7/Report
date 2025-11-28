@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMI計算機</title>
+<script>
+    // 計算を実行する関数
+    function calcBMI() {
+        // HTMLの要素から値を取得
+        var heightInput = document.getElementById("height").value;
+        var weightInput = document.getElementById("weight").value;
+
+        // 入力が空でないか確認
+        if (heightInput == "" || weightInput == "") {
+            alert("身長と体重を正しく入力してください");
+            return;
+        }
+
+        // 数値に変換
+        var h = Number(heightInput);
+        var w = Number(weightInput);
+
+        // 身長をcmからmに変換 (例: 170cm -> 1.7m)
+        var h_meter = h / 100;
+
+        // BMIの計算式: 体重(kg) ÷ (身長(m) × 身長(m))
+        var bmi = w / (h_meter * h_meter);
+
+        // 小数点第2位を四捨五入して、小数点第1位までにする処理
+        bmi = Math.round(bmi * 10) / 10;
+
+        // BMIの数値から判定を行う (if文による条件分岐)
+        var resultText = "";
+        if (bmi < 18.5) {
+            resultText = "低体重 (痩せ型)";
+        } else if (bmi < 25) {
+            resultText = "普通体重";
+        } else {
+            resultText = "肥満";
+        }
+
+        // 計算結果と判定を画面のテキストボックスに表示
+        document.getElementById("bmi_result").value = bmi;
+        document.getElementById("judgment").value = resultText;
+    }
+</script>
+</head>
+<body>
+
+<div class="container">
+    <h1>BMI計算機</h1>
+    <p>身長と体重を入力すると、BMIと肥満度の判定結果を表示します。</p>
+
+    <form>
+        <div class="input-group">
+            <label for="height">身長 (cm):</label>
+            <input type="text" id="height" placeholder="例: 170">
+        </div>
+        
+        <div class="input-group">
+            <label for="weight">体重 (kg):</label>
+            <input type="text" id="weight" placeholder="例: 60">
+        </div>
+
+        <!-- 計算ボタン -->
+        <input type="button" value="計算する" onclick="calcBMI()">
+
+        <div class="result-area">
+            <div class="input-group">
+                <label for="bmi_result">BMI:</label>
+                <input type="text" id="bmi_result" readonly>
+            </div>
+            
+            <div class="input-group">
+                <label for="judgment">判定:</label>
+                <input type="text" id="judgment" readonly>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
