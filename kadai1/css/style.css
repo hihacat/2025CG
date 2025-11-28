@@ -1,0 +1,234 @@
+@charset "UTF-8";
+
+/* 基本設定 */
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #fdfdfd;
+}
+
+/* リンクの装飾を消す */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+/* 画像のレスポンシブ対応 */
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+/* ヘッダー（ロゴとナビゲーション） */
+header {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-family: 'Georgia', serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #8b0000; /* イタリアンレッド */
+    border: 2px solid #8b0000;
+    padding: 5px 15px;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    font-weight: bold;
+    color: #555;
+    padding-bottom: 5px;
+}
+
+nav ul li a:hover,
+nav ul li a.current {
+    color: #8b0000;
+    border-bottom: 2px solid #8b0000;
+}
+
+/* メインビジュアル */
+.main-visual {
+    width: 100%;
+    height: 60vh;
+    background-image: url('../images/外観.jpg'); /* 素材の外観写真を使用 */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-visual::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4); /* 画像を少し暗くする */
+}
+
+.main-visual-text {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.main-visual-text h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    font-family: 'Georgia', serif;
+}
+
+.main-visual-text p {
+    font-size: 18px;
+}
+
+/* コンテンツエリア共通 */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 28px;
+    color: #8b0000;
+    margin-bottom: 40px;
+    font-family: 'Georgia', serif;
+}
+
+/* グリッドレイアウト（メニューや写真用） */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #8b0000;
+}
+
+.card-text {
+    font-size: 14px;
+    color: #666;
+}
+
+/* こだわりセクション（テキストと画像の横並び） */
+.feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.feature:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.feature-img {
+    flex: 1;
+}
+
+.feature-img img {
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.feature-text {
+    flex: 1;
+    padding: 0 40px;
+}
+
+.feature-text h3 {
+    color: #8b0000;
+    font-size: 22px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    display: inline-block;
+}
+
+/* フッター */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* レスポンシブ調整 */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+    
+    nav ul {
+        margin-top: 15px;
+    }
+
+    .main-visual h1 {
+        font-size: 32px;
+    }
+
+    .feature {
+        flex-direction: column;
+    }
+
+    .feature:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .feature-text {
+        padding: 20px 0;
+    }
+}
