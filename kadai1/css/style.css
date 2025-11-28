@@ -28,7 +28,7 @@ img {
 
 /* ヘッダー */
 header {
-    background-color: rgba(255, 255, 255, 0.95); /* 少し透過 */
+    background-color: rgba(255, 255, 255, 0.95);
     padding: 15px 30px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: sticky;
@@ -41,13 +41,14 @@ header {
 }
 
 .logo {
-    font-family: 'Georgia', serif;
+    /* 日本語ロゴに対応するためフォント調整 */
+    font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'Georgia', serif;
     font-size: 24px;
     font-weight: bold;
     color: #8b0000;
     border: 2px solid #8b0000;
     padding: 5px 15px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 nav ul {
@@ -100,7 +101,7 @@ nav ul li a.current {
 .main-visual-video {
     position: relative;
     width: 100%;
-    height: 70vh; /* 動画は見栄え良く高さを取る */
+    height: 70vh;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -125,7 +126,7 @@ nav ul li a.current {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.3); /* 動画の上に薄い黒を被せて文字を見やすく */
+    background-color: rgba(0,0,0,0.3);
     z-index: 0;
 }
 
@@ -217,7 +218,7 @@ nav ul li a.current {
     color: #666;
 }
 
-/* こだわりセクション（テキストと画像の横並び） */
+/* こだわりセクション */
 .feature {
     display: flex;
     align-items: center;
@@ -234,7 +235,7 @@ nav ul li a.current {
 
 .feature-img {
     flex: 1;
-    height: 350px; /* 高さを統一 */
+    height: 350px;
 }
 
 .feature-img img {
@@ -274,7 +275,7 @@ nav ul li a.current {
 /* ギャラリーグリッド */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4列 */
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
 
@@ -342,6 +343,6 @@ footer p {
     }
 
     .gallery-grid {
-        grid-template-columns: repeat(2, 1fr); /* モバイルは2列 */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
